@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="10242">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>3-Phase Power Meter</label>
+      <description><![CDATA[        This Object provides the information to represent a generic 3-Phase Power Meter.    ]]></description>
+      <channels>
+         <channel id="Manufacturer" typeId="0"/>
+         <channel id="ModelNumber" typeId="1"/>
+         <channel id="SerialNumber" typeId="2"/>
+         <channel id="Description" typeId="3"/>
+         <channel id="TensionR" typeId="4"/>
+         <channel id="CurrentR" typeId="5"/>
+         <channel id="ActivePowerR" typeId="6"/>
+         <channel id="ReactivePowerR" typeId="7"/>
+         <channel id="InductiveReactivePowerR" typeId="8"/>
+         <channel id="CapacitiveReactivePowerR" typeId="9"/>
+         <channel id="ApparentPowerR" typeId="10"/>
+         <channel id="PowerFactorR" typeId="11"/>
+         <channel id="THD-VR" typeId="12"/>
+         <channel id="THD-AR" typeId="13"/>
+         <channel id="TensionS" typeId="14"/>
+         <channel id="CurrentS" typeId="15"/>
+         <channel id="ActivePowerS" typeId="16"/>
+         <channel id="ReactivePowerS" typeId="17"/>
+         <channel id="InductiveReactivePowerS" typeId="18"/>
+         <channel id="CapacitiveReactivePowerS" typeId="19"/>
+         <channel id="ApparentPowerS" typeId="20"/>
+         <channel id="PowerFactorS" typeId="21"/>
+         <channel id="THD-VS" typeId="22"/>
+         <channel id="THD-AS" typeId="23"/>
+         <channel id="TensionT" typeId="24"/>
+         <channel id="CurrentT" typeId="25"/>
+         <channel id="ActivePowerT" typeId="26"/>
+         <channel id="ReactivePowerT" typeId="27"/>
+         <channel id="InductiveReactivePowerT" typeId="28"/>
+         <channel id="CapacitiveReactivePowerT" typeId="29"/>
+         <channel id="ApparentPowerT" typeId="30"/>
+         <channel id="PowerFactorT" typeId="31"/>
+         <channel id="THD-VT" typeId="32"/>
+         <channel id="THD-AT" typeId="33"/>
+         <channel id="3-PhaseActivePower" typeId="34"/>
+         <channel id="3-PhaseReactivePower" typeId="35"/>
+         <channel id="3-PhaseInductiveReactivePower" typeId="36"/>
+         <channel id="3-PhaseCapacitiveReactivePower" typeId="37"/>
+         <channel id="3-PhaseApparentPower" typeId="38"/>
+         <channel id="3-PhasePowerFactor" typeId="39"/>
+         <channel id="3-Phasephicosine" typeId="40"/>
+         <channel id="ActiveEnergy" typeId="41"/>
+         <channel id="ReactiveEnergy" typeId="42"/>
+         <channel id="InductiveReactiveEnergy" typeId="43"/>
+         <channel id="CapacitiveReactiveEnergy" typeId="44"/>
+         <channel id="ApparentEnergy" typeId="45"/>
+         <channel id="TensionR-S" typeId="46"/>
+         <channel id="TensionS-T" typeId="47"/>
+         <channel id="TensionT-R" typeId="48"/>
+         <channel id="Frequency" typeId="49"/>
+         <channel id="NeutralCurrent" typeId="50"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">10242</property>
+         <property name="ObjectURN">urn:oma:lwm2m:x:10242</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+   <channel-type id="0" advanced="true">
+      <item-type>String</item-type>
+      <label>Manufacturer</label>
+      <description><![CDATA[                Human readable manufacturer name            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="1" advanced="true">
+      <item-type>String</item-type>
+      <label>Model Number</label>
+      <description><![CDATA[                A model identifier (manufacturer specified string)            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="2" advanced="true">
+      <item-type>String</item-type>
+      <label>Serial Number</label>
+      <description><![CDATA[                Serial number of the meter            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="3" advanced="true">
+      <item-type>String</item-type>
+      <label>Description</label>
+      <description><![CDATA[                Description of the meter            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="4">
+      <item-type>					Number				</item-type>
+      <label>Tension R</label>
+      <description><![CDATA[                Voltage phase 1 (phase to neutral)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="5">
+      <item-type>					Number				</item-type>
+      <label>Current R</label>
+      <description><![CDATA[                Current phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="6" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Power R</label>
+      <description><![CDATA[                Active Power phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="7" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Power R</label>
+      <description><![CDATA[                Reactive Power phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="8" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Inductive Reactive Power R</label>
+      <description><![CDATA[                Inductive Reactive Power phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="9" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Capacitive Reactive Power R</label>
+      <description><![CDATA[                Capacitive Reactive Power phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="10" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Power R</label>
+      <description><![CDATA[                Apparent Power phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="11" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Power Factor R</label>
+      <description><![CDATA[                Power Factor phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="12" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-V R</label>
+      <description><![CDATA[                Total Harmonic Distortion phase 1 (Tension)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="13" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-A R</label>
+      <description><![CDATA[                Total Harmonig Distortion phase 1 (Current)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="14">
+      <item-type>					Number				</item-type>
+      <label>Tension S</label>
+      <description><![CDATA[                Voltage phase 2 (phase to neutral)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="15">
+      <item-type>					Number				</item-type>
+      <label>Current S</label>
+      <description><![CDATA[                Current phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="16" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Power S</label>
+      <description><![CDATA[                Active Power phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="17" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Power S</label>
+      <description><![CDATA[                Reactive Power phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="18" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Inductive Reactive Power S</label>
+      <description><![CDATA[                Inductive Reactive Power phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="19" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Capacitive Reactive Power S</label>
+      <description><![CDATA[                Capacitive Reactive Power phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="20" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Power S</label>
+      <description><![CDATA[                Apparent Power phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="21" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Power Factor S</label>
+      <description><![CDATA[                Power Factor phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="22" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-V S</label>
+      <description><![CDATA[                Total Harmonic Distortion phase 2 (Tension)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="23" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-A S</label>
+      <description><![CDATA[                Total Harmonic Distortion phase 2 (Current)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="24">
+      <item-type>					Number				</item-type>
+      <label>Tension T</label>
+      <description><![CDATA[                Voltage phase 3 (phase to neutral)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="25">
+      <item-type>					Number				</item-type>
+      <label>Current T</label>
+      <description><![CDATA[                Current phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="26" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Power T</label>
+      <description><![CDATA[                Active Power phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="27" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Power T</label>
+      <description><![CDATA[                Reactive Power phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="28" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Inductive Reactive Power T</label>
+      <description><![CDATA[                Inductive Reactive Power phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="29" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Capacitive Reactive Power T</label>
+      <description><![CDATA[                Capacitive Reactive Power phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="30" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Power T</label>
+      <description><![CDATA[                Apparent Power phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="31" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Power Factor T</label>
+      <description><![CDATA[                Power Factor phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="32" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-V T</label>
+      <description><![CDATA[                Total Harmonic Distortion phase 3 (Tension)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="33" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-A T</label>
+      <description><![CDATA[                Total Harmonic Distortion phase 3 (Current)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="34" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Active Power</label>
+      <description><![CDATA[                3-Phase Active Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="35" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Reactive Power</label>
+      <description><![CDATA[                3-Phase Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="36" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Inductive Reactive Power</label>
+      <description><![CDATA[                3-Phase Inductive Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="37" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Capacitive Reactive Power</label>
+      <description><![CDATA[                3-Phase Capacitive Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="38" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Apparent Power</label>
+      <description><![CDATA[                3-Phase Apparent Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="39" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase Power Factor</label>
+      <description><![CDATA[                3-Phase Power Factor            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="40" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>3-Phase phi cosine</label>
+      <description><![CDATA[                3-Phase phi cosine            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="41" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Energy</label>
+      <description><![CDATA[                Active Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="42" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Energy</label>
+      <description><![CDATA[                Reactive Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="43" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Inductive Reactive Energy</label>
+      <description><![CDATA[                Inductive Reactive Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="44" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Capacitive Reactive Energy</label>
+      <description><![CDATA[                Capacitive Reactive Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="45" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Energy</label>
+      <description><![CDATA[                Apparent Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="46" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Tension R-S</label>
+      <description><![CDATA[                Voltage phase 1 to phase 2            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="47" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Tension S-T</label>
+      <description><![CDATA[                Voltage phase 2 to phase 3            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="48" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Tension T-R</label>
+      <description><![CDATA[                Voltage phase 3 to phase 1            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="49" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Frequency</label>
+      <description><![CDATA[                Frequency            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="50" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Neutral Current</label>
+      <description><![CDATA[                Neutral Current            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+</thing:thing-descriptions>

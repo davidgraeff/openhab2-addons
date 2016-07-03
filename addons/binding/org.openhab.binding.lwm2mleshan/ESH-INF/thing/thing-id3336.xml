@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3336">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Location</label>
+      <description><![CDATA[This IPSO object represents GPS coordinates. This object is compatible with the LWM2M management object for location, but uses reusable resources.              ]]></description>
+      <channels>
+         <channel id="Latitude" typeId="5513"/>
+         <channel id="Longitude" typeId="5514"/>
+         <channel id="Uncertainty" typeId="5516"/>
+         <channel id="CompassDirection" typeId="5705"/>
+         <channel id="Velocity" typeId="5517"/>
+         <channel id="Timestamp" typeId="5518"/>
+         <channel id="ApplicationType" typeId="5750"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3336</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3336</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

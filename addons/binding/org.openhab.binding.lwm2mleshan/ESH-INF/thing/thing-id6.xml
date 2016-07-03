@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="6">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Location</label>
+      <description><![CDATA[This LWM2M Objects provide a range of device related information which can be queried by the LWM2M Server, and a device reboot and factory reset function.]]></description>
+      <channels>
+         <channel id="Latitude" typeId="0"/>
+         <channel id="Longitude" typeId="1"/>
+         <channel id="Altitude" typeId="2"/>
+         <channel id="Uncertainty" typeId="3"/>
+         <channel id="Velocity" typeId="4"/>
+         <channel id="Timestamp" typeId="5"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">6</property>
+         <property name="ObjectURN">TBD</property>
+         <property name="MultipleInstances">Single</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+   <channel-type id="0">
+      <item-type>String</item-type>
+      <label>Latitude</label>
+      <description><![CDATA[The decimal notation of latitude, e.g. -43.5723 [World Geodetic System 1984].]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="1">
+      <item-type>String</item-type>
+      <label>Longitude</label>
+      <description><![CDATA[The decimal notation of longitude, e.g. 153.21760 [World Geodetic System 1984].]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="2" advanced="true">
+      <item-type>String</item-type>
+      <label>Altitude</label>
+      <description><![CDATA[The decimal notation of altitude in meters above sea level.]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="3" advanced="true">
+      <item-type>String</item-type>
+      <label>Uncertainty</label>
+      <description><![CDATA[The accuracy of the position in meters.]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="4" advanced="true">
+      <item-type>					String				</item-type>
+      <label>Velocity</label>
+      <description><![CDATA[The velocity of the device as defined in 3GPP 23.032 GAD specification. This set of values may not be available if the device is static.]]></description>
+      <tags>
+         <tag>Opaque</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="5">
+      <item-type>DateTime</item-type>
+      <label>Timestamp</label>
+      <description><![CDATA[The timestamp of when the location measurement was performed.]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+</thing:thing-descriptions>

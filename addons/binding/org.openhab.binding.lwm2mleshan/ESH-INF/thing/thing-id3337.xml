@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3337">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Positioner</label>
+      <description><![CDATA[This IPSO object should be used with a generic position actuator from 0 to 100%. This resource optionally allows setting the transition time for an operation that changes the position of the actuator, and for reading the remaining time of the currently active transition.               ]]></description>
+      <channels>
+         <channel id="CurrentPosition" typeId="5536"/>
+         <channel id="TransitionTime" typeId="5537"/>
+         <channel id="RemainingTime" typeId="5538"/>
+         <channel id="MinMeasuredValue" typeId="5601"/>
+         <channel id="MaxMeasuredValue" typeId="5602"/>
+         <channel id="ResetMinandMaxMeasuredValue" typeId="5605"/>
+         <channel id="MinLimit" typeId="5519"/>
+         <channel id="MaxLimit" typeId="5520"/>
+         <channel id="ApplicationType" typeId="5750"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3337</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3337</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

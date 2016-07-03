@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3334">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Gyrometer</label>
+      <description><![CDATA[This IPSO Object is used to report the current reading of a gyrometer sensor in 3 axes. It provides tracking of the minimum and maximum angular rate in all 3 axes. An example unit of measure is radians per second (ucum:rad/s).              ]]></description>
+      <channels>
+         <channel id="XValue" typeId="5702"/>
+         <channel id="YValue" typeId="5703"/>
+         <channel id="ZValue" typeId="5704"/>
+         <channel id="SensorUnits" typeId="5701"/>
+         <channel id="MinXValue" typeId="5508"/>
+         <channel id="MaxXValue" typeId="5509"/>
+         <channel id="MinYValue" typeId="5510"/>
+         <channel id="MaxYValue" typeId="5511"/>
+         <channel id="MinZValue" typeId="5512"/>
+         <channel id="MaxZValue" typeId="5513"/>
+         <channel id="ResetMinandMaxMeasuredValues" typeId="5605"/>
+         <channel id="MinRangeValue" typeId="5603"/>
+         <channel id="MaxRangeValue" typeId="5604"/>
+         <channel id="ApplicationType" typeId="5750"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3334</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3334</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

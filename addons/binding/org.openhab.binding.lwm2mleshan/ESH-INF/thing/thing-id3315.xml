@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3315">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Barometer</label>
+      <description><![CDATA[Description: This IPSO object should be used with an air pressure sensor to report a barometer measurement.  It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the barometer sensor. An example measurement unit is kPa (ucum:kPa).]]></description>
+      <channels>
+         <channel id="SensorValue" typeId="5700"/>
+         <channel id="MinMeasuredValue" typeId="5601"/>
+         <channel id="MaxMeasuredValue" typeId="5602"/>
+         <channel id="MinRangeValue" typeId="5603"/>
+         <channel id="MaxRangeValue" typeId="5604"/>
+         <channel id="SensorUnits" typeId="5701"/>
+         <channel id="ResetMinandMaxMeasuredValues" typeId="5605"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3315</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3315</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

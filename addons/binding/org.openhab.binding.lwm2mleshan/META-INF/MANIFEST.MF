@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: lwm2mLeshan Binding
+Bundle-SymbolicName: org.openhab.binding.lwm2mleshan;singleton:=true
+Bundle-Vendor: openHAB
+Bundle-Version: 2.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .,
+ lib/leshan-server-core-0.1.11-M11.jar,
+ lib/leshan-server-cf-0.1.11-M11.jar,
+ lib/leshan-core-0.1.11-M11.jar,
+ lib/scandium-2.0.0-M1.jar,
+ lib/element-connector-2.0.0-M1.jar,
+ lib/californium-core-2.0.0-M1.jar
+Import-Package: 
+ com.google.gson,
+ org.eclipse.smarthome.config.core,
+ org.eclipse.smarthome.config.discovery,
+ org.eclipse.smarthome.core.common.registry,
+ org.eclipse.smarthome.core.library.items,
+ org.eclipse.smarthome.core.library.types,
+ org.eclipse.smarthome.core.thing,
+ org.eclipse.smarthome.core.thing.binding,
+ org.eclipse.smarthome.core.thing.binding.builder,
+ org.eclipse.smarthome.core.thing.type,
+ org.eclipse.smarthome.core.types,
+ org.eclipse.smarthome.core.thing.firmware,
+ org.eclipse.smarthome.core.thing.binding.firmware,
+ org.openhab.binding.lwm2mleshan,
+ org.openhab.binding.lwm2mleshan.handler,
+ org.osgi.framework,
+ org.osgi.service.component,
+ org.slf4j
+Service-Component: OSGI-INF/*.xml
+Export-Package: org.openhab.binding.lwm2mleshan;uses:="org.eclipse.smarthome.core.thing",
+ org.openhab.binding.lwm2mleshan.handler;uses:="org.eclipse.smarthome.core.thing,org.eclipse.smarthome.core.thing.binding,org.eclipse.smarthome.core.types"

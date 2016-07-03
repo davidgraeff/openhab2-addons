@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3302">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Presence</label>
+      <description><![CDATA[Presence sensor with digital sensing, optional delay parameters]]></description>
+      <channels>
+         <channel id="DigitalInputState" typeId="5500"/>
+         <channel id="DigitalInputCounter" typeId="5501"/>
+         <channel id="DigitalInputCounterReset" typeId="5505"/>
+         <channel id="SensorType" typeId="5751"/>
+         <channel id="BusytoCleardelay" typeId="5903"/>
+         <channel id="CleartoBusydelay" typeId="5904"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3302</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3302</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

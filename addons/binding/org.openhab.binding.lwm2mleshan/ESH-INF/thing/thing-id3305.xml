@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3305">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Power Measurement</label>
+      <description><![CDATA[This IPSO object should be used over a power measurement sensor to report a remote power measurement.  It also provides resources for minimum/maximum measured values and the minimum/maximum range for both active and reactive power. Il also provides resources for cumulative energy, calibration, and the power factor.]]></description>
+      <channels>
+         <channel id="Instantaneousactivepower" typeId="5800"/>
+         <channel id="MinMeasuredactivepower" typeId="5801"/>
+         <channel id="MaxMeasuredactivepower" typeId="5802"/>
+         <channel id="MinRangeactivepower" typeId="5803"/>
+         <channel id="MaxRangeactivepower" typeId="5804"/>
+         <channel id="Cumulativeactivepower" typeId="5805"/>
+         <channel id="ActivePowerCalibration" typeId="5806"/>
+         <channel id="Instantaneousreactivepower" typeId="5810"/>
+         <channel id="MinMeasuredreactivepower" typeId="5811"/>
+         <channel id="MaxMeasuredreactivepower" typeId="5812"/>
+         <channel id="MinRangereactivepower" typeId="5813"/>
+         <channel id="MaxRangereactivepower" typeId="5814"/>
+         <channel id="Cumulativereactivepower" typeId="5815"/>
+         <channel id="ReactivePowerCalibration" typeId="5816"/>
+         <channel id="Powerfactor" typeId="5820"/>
+         <channel id="CurrentCalibration" typeId="5821"/>
+         <channel id="ResetCumulativeenergy" typeId="5822"/>
+         <channel id="ResetMinandMaxMeasuredValues" typeId="5605"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3305</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3305</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

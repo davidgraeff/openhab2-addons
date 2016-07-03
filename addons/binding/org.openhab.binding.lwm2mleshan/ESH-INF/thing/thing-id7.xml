@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="7">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Connectivity Statistics</label>
+      <description><![CDATA[This LWM2M Objects enables client to collect statistical information and enables the LWM2M Server to retrieve these information, set the collection duration and reset the statistical parameters.]]></description>
+      <channels>
+         <channel id="SMSTxCounter" typeId="0"/>
+         <channel id="SMSRxCounter" typeId="1"/>
+         <channel id="TxData" typeId="2"/>
+         <channel id="RxData" typeId="3"/>
+         <channel id="MaxMessageSize" typeId="4"/>
+         <channel id="AverageMessageSize" typeId="5"/>
+         <channel id="StartOrReset" typeId="6"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">7</property>
+         <property name="ObjectURN">TBD</property>
+         <property name="MultipleInstances">Single</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+   <channel-type id="0" advanced="true">
+      <item-type>Number</item-type>
+      <label>SMS Tx Counter</label>
+      <description><![CDATA[Indicate the total number of SMS successfully transmitted during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="1" advanced="true">
+      <item-type>Number</item-type>
+      <label>SMS Rx Counter</label>
+      <description><![CDATA[Indicate the total number of SMS successfully received during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="2" advanced="true">
+      <item-type>Number</item-type>
+      <label>Tx Data</label>
+      <description><![CDATA[Indicate the total amount of data transmitted during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="3" advanced="true">
+      <item-type>Number</item-type>
+      <label>Rx Data</label>
+      <description><![CDATA[Indicate the total amount of data received during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="4" advanced="true">
+      <item-type>Number</item-type>
+      <label>Max Message Size</label>
+      <description><![CDATA[The maximum message size that is used during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="5" advanced="true">
+      <item-type>Number</item-type>
+      <label>Average Message Size</label>
+      <description><![CDATA[The average message size that is used during the collection period.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="6">
+      <item-type>Switch</item-type>
+      <label>StartOrReset</label>
+      <description><![CDATA[Start to collect information or reset all other Resources to zeros in this Object. For example, the first time this Resource is executed, the client starts to collect information. The second time this Resource is executed, the values of Resource 0~5 are reset to 0.]]></description>
+      <tags>
+         <tag>Executable</tag>
+      </tags>
+   </channel-type>
+</thing:thing-descriptions>

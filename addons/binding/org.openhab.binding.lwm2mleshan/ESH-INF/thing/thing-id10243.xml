@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="10243">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Single-Phase Power Meter</label>
+      <description><![CDATA[        This Object provides the information to represent a generic Single-Phase Power Meter.    ]]></description>
+      <channels>
+         <channel id="Manufacturer" typeId="0"/>
+         <channel id="ModelNumber" typeId="1"/>
+         <channel id="SerialNumber" typeId="2"/>
+         <channel id="Description" typeId="3"/>
+         <channel id="Tension" typeId="4"/>
+         <channel id="Current" typeId="5"/>
+         <channel id="ActivePower" typeId="6"/>
+         <channel id="ReactivePower" typeId="7"/>
+         <channel id="InductiveReactivePower" typeId="8"/>
+         <channel id="CapacitiveReactivePower" typeId="9"/>
+         <channel id="ApparentPower" typeId="10"/>
+         <channel id="PowerFactor" typeId="11"/>
+         <channel id="THD-V" typeId="12"/>
+         <channel id="THD-A" typeId="13"/>
+         <channel id="ActiveEnergy" typeId="14"/>
+         <channel id="ReactiveEnergy" typeId="15"/>
+         <channel id="ApparentEnergy" typeId="16"/>
+         <channel id="Frequency" typeId="17"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">10243</property>
+         <property name="ObjectURN">urn:oma:lwm2m:x:10243</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+   <channel-type id="0" advanced="true">
+      <item-type>String</item-type>
+      <label>Manufacturer</label>
+      <description><![CDATA[                Human readable manufacturer name            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="1" advanced="true">
+      <item-type>String</item-type>
+      <label>Model Number</label>
+      <description><![CDATA[                A model identifier (manufacturer specified string)            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="2" advanced="true">
+      <item-type>String</item-type>
+      <label>Serial Number</label>
+      <description><![CDATA[                Serial number of the meter            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="3" advanced="true">
+      <item-type>String</item-type>
+      <label>Description</label>
+      <description><![CDATA[                Description of the meter            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="4">
+      <item-type>String</item-type>
+      <label>Tension</label>
+      <description><![CDATA[                Voltage            ]]></description>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="5">
+      <item-type>					Number				</item-type>
+      <label>Current</label>
+      <description><![CDATA[                Current            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="6" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Power</label>
+      <description><![CDATA[                Active Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="7" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Power</label>
+      <description><![CDATA[                Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="8" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Inductive Reactive Power</label>
+      <description><![CDATA[                Inductive Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="9" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Capacitive Reactive Power</label>
+      <description><![CDATA[                Capacitive Reactive Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="10" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Power</label>
+      <description><![CDATA[                Apparent Power            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="11" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Power Factor</label>
+      <description><![CDATA[                Power Factor            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="12" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-V</label>
+      <description><![CDATA[                Total Harmonic Distortion (Tension)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="13" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>THD-A</label>
+      <description><![CDATA[                Total Harmonic Distortion (Current)            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="14" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Active Energy</label>
+      <description><![CDATA[                Active Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="15" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Reactive Energy</label>
+      <description><![CDATA[                Reactive Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="16" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Apparent Energy</label>
+      <description><![CDATA[                Apparent Energy            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="17" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Frequency</label>
+      <description><![CDATA[                Frequency            ]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+</thing:thing-descriptions>

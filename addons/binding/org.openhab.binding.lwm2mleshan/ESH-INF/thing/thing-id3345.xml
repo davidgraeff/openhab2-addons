@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3345">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Multiple Axis Joystick</label>
+      <description><![CDATA[This IPSO object can be used to report the position of a shuttle or joystick control. A digital input is provided to report the state of an associated push button.              ]]></description>
+      <channels>
+         <channel id="DigitalInputState" typeId="5500"/>
+         <channel id="DigitalInputCounter" typeId="5501"/>
+         <channel id="XValue" typeId="5702"/>
+         <channel id="YValue" typeId="5703"/>
+         <channel id="ZValue" typeId="5704"/>
+         <channel id="ApplicationType" typeId="5750"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3345</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3345</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

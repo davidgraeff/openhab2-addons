@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3310">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Load Control</label>
+      <description><![CDATA[Description: This Object is used for demand-response load control and other load control in automation application (not limited to power).]]></description>
+      <channels>
+         <channel id="EventIdentifier" typeId="5823"/>
+         <channel id="StartTime" typeId="5824"/>
+         <channel id="DurationInMin" typeId="5825"/>
+         <channel id="CriticalityLevel" typeId="5826"/>
+         <channel id="AvgLoadAdjPct" typeId="5827"/>
+         <channel id="DutyCycle" typeId="5828"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3310</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3310</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

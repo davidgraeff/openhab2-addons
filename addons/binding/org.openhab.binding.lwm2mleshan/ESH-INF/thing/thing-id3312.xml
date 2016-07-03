@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3312">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Power Control</label>
+      <description><![CDATA[Description: This Object is used to control a power source, such as a Smart Plug.  It allows a power relay to be turned on or off and its dimmer setting to be control as a % between 0 and 100.]]></description>
+      <channels>
+         <channel id="On_Off" typeId="5850"/>
+         <channel id="Dimmer" typeId="5851"/>
+         <channel id="OnTime" typeId="5852"/>
+         <channel id="Cumulativeactivepower" typeId="5805"/>
+         <channel id="Powerfactor" typeId="5820"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3312</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3312</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

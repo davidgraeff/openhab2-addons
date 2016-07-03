@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="10244">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>VehicleControlUnit</label>
+      <description><![CDATA[This Object provides the information to represent a generic VCU(vehicle control unit).]]></description>
+      <channels>
+         <channel id="VehicleUIState" typeId="0"/>
+         <channel id="VehicleSpeed" typeId="1"/>
+         <channel id="VehicleShiftStatus" typeId="2"/>
+         <channel id="VehicleAPPosition" typeId="3"/>
+         <channel id="VehiclePower" typeId="4"/>
+         <channel id="VehicleDriveEnergy" typeId="5"/>
+         <channel id="VehicleEnergyConsumptionEfficiency" typeId="6"/>
+         <channel id="VehicleEstimatedMileage" typeId="7"/>
+         <channel id="VehicleChargeCableStatus" typeId="8"/>
+         <channel id="VehicleChargeStatus" typeId="9"/>
+         <channel id="VehicleChargeVoltage" typeId="10"/>
+         <channel id="VehicleChargeCurrent" typeId="11"/>
+         <channel id="VehicleChargeRemainingTime" typeId="12"/>
+         <channel id="BatteryPackVoltage" typeId="13"/>
+         <channel id="BatteryPackCurrent" typeId="14"/>
+         <channel id="BatteryPackRemainingCapacity" typeId="15"/>
+         <channel id="BatteryPackSOC" typeId="16"/>
+         <channel id="BatteryPackSOH" typeId="17"/>
+         <channel id="BatteryCellMinVolt" typeId="18"/>
+         <channel id="BatteryCellMaxVolt" typeId="19"/>
+         <channel id="BatteryModuleMinTemp" typeId="20"/>
+         <channel id="BatteryModuleMaxTemp" typeId="21"/>
+         <channel id="BatteryConnectionStatus" typeId="22"/>
+         <channel id="MCUVoltage" typeId="24"/>
+         <channel id="MCUTemperature" typeId="25"/>
+         <channel id="MotorSpeed" typeId="26"/>
+         <channel id="MotorTemperature" typeId="27"/>
+         <channel id="MotorOTWarning" typeId="28"/>
+         <channel id="MCUOTWarning" typeId="29"/>
+         <channel id="BatteryPackOTWarning" typeId="30"/>
+         <channel id="MCUfault" typeId="31"/>
+         <channel id="MotorError" typeId="32"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">10244</property>
+         <property name="ObjectURN">urn:oma:lwm2m:x:10244</property>
+         <property name="MultipleInstances">Single</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+   <channel-type id="0">
+      <item-type>Number</item-type>
+      <label>Vehicle UI State</label>
+      <description><![CDATA[The UI state of the vehicle. 0: idle 1: driving 2: charging 3: limp-home 4-15: reserved for future use]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="1">
+      <item-type>Number</item-type>
+      <label>Vehicle Speed</label>
+      <description><![CDATA[Current speed of the vehicle.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="2">
+      <item-type>Number</item-type>
+      <label>Vehicle Shift Status</label>
+      <description><![CDATA[Current shift status of the vehicle. 0: Neutral 1: Forward 2: Reverse]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="3">
+      <item-type>Number</item-type>
+      <label>Vehicle AP Position</label>
+      <description><![CDATA[Current position of the accelerator pedal.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="4" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Vehicle Power</label>
+      <description><![CDATA[Current power of drive output/regenerative braking.]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="5" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Vehicle Drive Energy</label>
+      <description><![CDATA[Accumulated drive energy of the vehicle.]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="6" advanced="true">
+      <item-type>					Number				</item-type>
+      <label>Vehicle Energy Consumption Efficiency</label>
+      <description><![CDATA[Energy consumption efficiency of the vehicle.]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="7" advanced="true">
+      <item-type>Number</item-type>
+      <label>Vehicle Estimated Mileage</label>
+      <description><![CDATA[Estimated mileage of current battery capacity.]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="8">
+      <item-type>Contact</item-type>
+      <label>Vehicle Charge Cable Status</label>
+      <description><![CDATA[Whether the charge cable is connected or not. 0: unconnected 1: connected]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="9">
+      <item-type>Number</item-type>
+      <label>Vehicle Charge Status</label>
+      <description><![CDATA[Charging status of the vehicle. 1: non-charge mode 2: charging 3: charge completed 4: charging abort abnormally ]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="10">
+      <item-type>					Number				</item-type>
+      <label>Vehicle Charge Voltage</label>
+      <description><![CDATA[Charging voltage]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="11">
+      <item-type>					Number				</item-type>
+      <label>Vehicle Charge Current</label>
+      <description><![CDATA[Charging current]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="12">
+      <item-type>Number</item-type>
+      <label>Vehicle Charge Remaining Time</label>
+      <description><![CDATA[Remaining charging time]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="13">
+      <item-type>					Number				</item-type>
+      <label>Battery Pack Voltage</label>
+      <description><![CDATA[Voltage of the battery pack]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="14">
+      <item-type>					Number				</item-type>
+      <label>Battery Pack Current</label>
+      <description><![CDATA[Current of the battery pack]]></description>
+      <tags>
+         <tag>Float</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="15">
+      <item-type>Number</item-type>
+      <label>Battery Pack Remaining Capacity</label>
+      <description><![CDATA[Remaining capacity of the battery pack]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="16">
+      <item-type>Number</item-type>
+      <label>Battery Pack SOC</label>
+      <description><![CDATA[SOC(state of charge) of the battery pack]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="17">
+      <item-type>Number</item-type>
+      <label>Battery Pack SOH</label>
+      <description><![CDATA[SOH(state of health) of the battery pack]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="18">
+      <item-type>Number</item-type>
+      <label>Battery Cell MinVolt</label>
+      <description><![CDATA[Minimum voltage of the battery module (with parallel connection of cells)]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="19">
+      <item-type>Number</item-type>
+      <label>Battery Cell MaxVolt</label>
+      <description><![CDATA[Maximum voltage of the battery module (with parallel connection of cells)]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="20">
+      <item-type>Number</item-type>
+      <label>Battery Module MinTemp</label>
+      <description><![CDATA[Minimum temperature of the battery module]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="21">
+      <item-type>Number</item-type>
+      <label>Battery Module MaxTemp</label>
+      <description><![CDATA[Maximum temperature of the battery module]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="22">
+      <item-type>Contact</item-type>
+      <label>Battery Connection Status</label>
+      <description><![CDATA[Whether the battery is connected or not. 0: unconnected 1: connected]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="24">
+      <item-type>Number</item-type>
+      <label>MCU Voltage</label>
+      <description><![CDATA[Voltage of the MCU(motor control unit)]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="25">
+      <item-type>Number</item-type>
+      <label>MCU Temperature</label>
+      <description><![CDATA[Temperature of MCU(motor control unit)]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="26">
+      <item-type>Number</item-type>
+      <label>Motor Speed</label>
+      <description><![CDATA[Rotational speed of the motor]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="27">
+      <item-type>Number</item-type>
+      <label>Motor Temperature</label>
+      <description><![CDATA[Temperature of the motor]]></description>
+      <tags>
+         <tag>Integer</tag>
+      </tags>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="28" advanced="true">
+      <item-type>Contact</item-type>
+      <label>Motor OT Warning</label>
+      <description><![CDATA[Whether the motor is OT or not. 0: normal 1: OT warning]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="29" advanced="true">
+      <item-type>Contact</item-type>
+      <label>MCU OT Warning</label>
+      <description><![CDATA[Whether the MCU is OT or not. 0: normal 1: OT warning]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="30" advanced="true">
+      <item-type>Contact</item-type>
+      <label>Battery Pack OT Warning</label>
+      <description><![CDATA[Whether the battery pack is OT or not. 0: normal 1: OT warning]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="31" advanced="true">
+      <item-type>Contact</item-type>
+      <label>MCU fault</label>
+      <description><![CDATA[Status of MCU. 0: normal 1: level 1 minor fault 2: level 2 critical fault]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+   <channel-type id="32" advanced="true">
+      <item-type>Contact</item-type>
+      <label>Motor Error</label>
+      <description><![CDATA[Status of the battery pack. 0: normal 1: level D25 minor fault 2: level 2 critical fault]]></description>
+      <category>Sensor</category>
+      <state readOnly="true"/>
+   </channel-type>
+</thing:thing-descriptions>

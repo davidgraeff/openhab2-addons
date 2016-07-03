@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3300">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Generic Sensor</label>
+      <description><![CDATA[This IPSO object allow the description of a generic sensor. It is based on the description of a value and a unit according to the UCUM specification. Thus, any type of value defined within this specification can be reporting using this object. Specific object for a given range of sensors is described later in the document, enabling to identify the type of sensors directly from its Object ID. This object may be used as a generic object if a dedicated one does not exist.]]></description>
+      <channels>
+         <channel id="SensorValue" typeId="5700"/>
+         <channel id="SensorUnits" typeId="5701"/>
+         <channel id="MinMeasuredValue" typeId="5601"/>
+         <channel id="MaxMeasuredValue" typeId="5602"/>
+         <channel id="MinRangeValue" typeId="5603"/>
+         <channel id="MaxRangeValue" typeId="5604"/>
+         <channel id="ApplicationType" typeId="5750"/>
+         <channel id="SensorType" typeId="5751"/>
+         <channel id="ResetMinandMaxMeasuredValues" typeId="5605"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3300</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3300</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

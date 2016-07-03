@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3301">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Illuminance</label>
+      <description><![CDATA[Illuminance sensor, example units = lx]]></description>
+      <channels>
+         <channel id="SensorValue" typeId="5700"/>
+         <channel id="MinMeasuredValue" typeId="5601"/>
+         <channel id="MaxMeasuredValue" typeId="5602"/>
+         <channel id="MinRangeValue" typeId="5603"/>
+         <channel id="MaxRangeValue" typeId="5604"/>
+         <channel id="ResetMinandMaxMeasuredValues" typeId="5605"/>
+         <channel id="SensorUnits" typeId="5701"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3301</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3301</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          bindingId="lwm2mleshan"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="3340">
+      <supported-bridge-type-refs>
+         <bridge-type-ref id="lwm2mBridgeThing"/>
+      </supported-bridge-type-refs>
+      <label>Timer</label>
+      <description><![CDATA[This IPSO object is used to time events and actions, using patterns common to industrial timers. A POST to the trigger resource or On/Off input state change starts the timing operation, and the timer remaining time shows zero when the operation is complete. The patterns supported are One-Shot (mode 1), On-Time or Interval (mode 2), Time delay on pick-up or TDPU (tmode 3), and Time Delay on Drop-Out or TDDO (mode 4). Mode 0 disables the timer, so the output follows the input with no delay. A counter is provided to count occurrences of the timer output changing from 0 to 1. Writing a value of zero resets the counter. The Digital Input State resource reports the state of the timer output.              ]]></description>
+      <channels>
+         <channel id="Duration" typeId="5521"/>
+         <channel id="RemainingTime" typeId="5538"/>
+         <channel id="MinimumOff-time" typeId="5525"/>
+         <channel id="Trigger" typeId="5523"/>
+         <channel id="On_Off" typeId="5850"/>
+         <channel id="DigitalInputCounter" typeId="5501"/>
+         <channel id="CumulativeTime" typeId="5544"/>
+         <channel id="DigitalState" typeId="5543"/>
+         <channel id="Counter" typeId="5534"/>
+         <channel id="Mode" typeId="5526"/>
+         <channel id="ApplicationType" typeId="5750"/>
+      </channels>
+      <properties>
+         <property name="ObjectID">3340</property>
+         <property name="ObjectURN">urn:oma:lwm2m:ext:3340</property>
+         <property name="MultipleInstances">Multiple</property>
+         <property name="Mandatory">Optional</property>
+      </properties>
+   </thing-type>
+</thing:thing-descriptions>
